@@ -1,17 +1,15 @@
 Rails.application.routes.draw do
-  get 'static/terms'
 
-  get 'static/privacy'
 
-  get 'static/shipping'
+  get 'regulamin', to: "static#terms", as: :terms
+  get 'polityka-prywatnosci', to: "static#privacy", as: :privacy
+  get 'dostawa', to: "static#shipping", as: :shipping
+  get 'o-sklepie', to: "static#about", as: :about
 
-  get 'static/about'
+  root to: "products#index"
+  resources :products, only: [:show,:index]
+  resources :categories, only: [:show]
 
-  get 'categories/show'
-
-  get 'products/index'
-
-  get 'products/show'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
