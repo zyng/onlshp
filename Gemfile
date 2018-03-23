@@ -32,6 +32,17 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'faker' #for make fake names, adresses etc.
+gem 'letter_opener'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'simple_form'
+gem 'twitter-bootstrap-rails'
+gem 'ransack'
+gem 'kaminari'
+gem 'rails-i18n'
+gem 'statesman'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
