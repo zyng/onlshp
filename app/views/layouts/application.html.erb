@@ -9,6 +9,51 @@
   </head>
 
   <body>
-    <%= yield %>
+
+  	<%-# Nagłówek każdej strony - POCZĄTEK -%>
+  	<!-- Nagłówek każdej strony - POCZĄTEK -->
+  	<nav class="navbar navbar-inverse navbar-static-top">
+  		<div class="container">
+  			<div class="navbar-header">
+  				<a class="navbar-brand" href="<%= root_path %>">FakeShop</a>
+  			</div>
+  			<ul class="nav navbar-nav">
+  				<li class="active"><a href="#">Start</a></li>
+  				<li><a href="#">Polityka prywatności</a></li>
+  				<li><a href="#">Regulamin</a></li>
+  				<li><a href="#">Dostawa i płatności</a></li>
+  				<li><a href="#">O sklepie</a></li>
+  			</ul>
+  		</div>
+  	</nav>
+  	<%-# Nagłówek każdej strony - KONIEC -%>
+  	<!-- Nagłówek każdej strony - KONIEC -->
+
+  	<!-- Główny kontener - POCZĄTEK -->
+  	<div class="container-fluid">
+  		<div class="row">
+  			<!-- Side Bar Kategorie - POCZĄTEK -->
+  			<div class="col-md-2">
+  				<h3>Kategorie</h3>
+  				<ul class="nav nav-sidebar">
+  					<% (1..9).each do |category| %>
+	  					<li>
+	  						<%= link_to "Kategoria#{category}", category_path(category) %>
+	  					</li>
+	  				<% end %>
+  				</ul>
+  			</div>
+  			<!-- Side Bar Kategorie - KONIEC -->
+
+  			<!-- Główna treść - POCZĄTEK -->
+  			<div class="col-md-10">
+  				<%= yield %>
+  			</div>
+  			<!-- Główna treść - KONIEC -->
+  		</div>
+  	</div>
+  	<!-- Główny kontener - KONIEC -->
+
+    
   </body>
 </html>
